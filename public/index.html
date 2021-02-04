@@ -11,10 +11,11 @@
 
     <link rel="shortcut icon" href="favicon.ico" />
     <link rel="stylesheet" type="text/css" href="./css/basefor1.css" />
-    <link rel="stylesheet" type="text/css" href="css/demo1.css" />
+    <link rel="stylesheet" type="text/css" href="./css/main_styles.css" />
     <link rel="stylesheet" href="./cards.css" />
+    <link rel="stylesheet" href="./css/meditation.css">
     <link rel="stylesheet" href="./css/weather.css" />
-
+<!-- CSS Variables Check Script -->
     <script>
       document.documentElement.className = 'js';
       var supportsCssVars = function () {
@@ -37,8 +38,10 @@
           'Please view this Website in a modern browser that supports CSS Variables.'
         );
     </script>
+    <!-- End of CSS Variables Check Script -->
   </head>
-  <body class="demo-1">
+  <!-- Hero Element/Landing PAge -->
+  <body class="productiwitty_body">
     <main>
       <div class="message">
         To see the menu, please view on a larger screen.
@@ -46,10 +49,10 @@
       <div class="content content--fixed">
         <header class="main-header">
           <div class="main-links"></div>
-          <h1 class="main-header__title">Productiwitty.</h1>
+          <h1 class="main-header__title"><a href="index.html">Productiwitty.</a></h1>
         </header>
         <nav class="demos">
-          <a class="demo demo--current" href="index.html">Minalmistic Mode |</a>
+          <a class="demo demo--current" href="index.html"> |</a>
           <a class="demo" href="#login">Login.</a>
         </nav>
         <button class="menu-trigger">+ explore</button>
@@ -62,15 +65,18 @@
           Maximize Productivity<span class="dot_title">.</span>
         </h2>
       </div>
+  <!--End of Hero Element/Landing PAge -->
 
+  <!--  -->
       <div id="content-2" class="content content--switch">
         <h2 class="content__title">Bathroom</h2>
         <p class="content__text"></p>
       </div>
+<!--  -->
 
-      <!-- Weather App -->
+
+      <!--Start of Weather App -->
       <div id="content-3" class="content content--switch" style="padding: 0%">
-        <!-- <div class="view_main"> -->
         <div class="app-wrap">
           <header class="weather_header">
             <input
@@ -93,10 +99,10 @@
           </main>
         </div>
         <script src="./js/weather.js"></script>
-        <!-- </div> -->
       </div>
-
       <!-- End of Weather App -->
+
+
       <!-- Pomodoro App -->
       <div id="content-4" class="content content--switch">
         <div class="view_main">
@@ -138,30 +144,55 @@
             </div>
           </main>
           <div class="hidden">
-            <audio src="./assets/backtowork.mp3" data-sound="pomodoro"></audio>
-            <audio src="./assets/break.mp3" data-sound="shortBreak"></audio>
+            <audio src="./assets/sounds/backtowork.mp3" data-sound="pomodoro"></audio>
+            <audio src="./assets/sounds/break.mp3" data-sound="shortBreak"></audio>
             <audio
-              src="./assets/button-sound.mp3"
+              src="./assets/sounds/button-sound.mp3"
               data-sound="longBreak"
             ></audio>
           </div>
           <script src="./js/pomodoro.js"></script>
           <link rel="stylesheet" href="./css/pomodoro.css" />
         </div>
-        <!-- End of Pomodoro App -->
       </div>
+      <!-- End of Pomodoro App -->
 
-      <div id="content-5" class="content content--switch">
-        <div class="view_main"></div>
-        <iframe
-          src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FKolkata&amp;src=NWc4ZGMwOXV1dW5lNmtjMTU4cWNzbGc5cDRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;src=ZW4uaW5kaWFuI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23795548&amp;color=%237986CB&amp;title=Productiwitty%20Calendar"
-          style="border: solid 1px #777"
-          width="800"
-          height="600"
-          frameborder="0"
-          scrolling="no"
-        ></iframe>
+      <!-- Meditation App  -->
+
+      <div id="content-5" class="content content--switch" style="padding: 0%">
+        <div class="app-meditation">
+      <div class="vid-container">
+        <video loop >
+          <source src="./assets/video/rain.mp4"  type="video/mp4">
+        </video>
+        </div>
+        <div class="time-select">
+          <button data-time="120">2 Minutes</button>
+          <button data-time="300" class="medium-mins">5 Minutes</button>
+          <button data-time="600" class="long-mins">10 Minutes</button>
+        </div>
+        <div class="player-container">
+            <audio class="song">
+                <source src="./assets/sounds/rain.mp3" />
+              </audio>
+              <img src="./assets/svg/play.svg" class="play"></img>
+              <svg class="track-outline" width="453" height="453" viewBox="0 0 453 453" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="226.5" cy="226.5" r="216.5" stroke="white" stroke-width="20"/>
+                </svg>
+              <svg class="moving-outline" width="453" height="453" viewBox="0 0 453 453" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="226.5" cy="226.5" r="216.5" stroke="#018EBA" stroke-width="20"/>
+                </svg>
+              <img src="./assets/svg/replay.svg" class="replay"></img>
+            
+                <h3 class="time-display">0:00</h3>      
       </div>
+      <div class="sound-picker">
+        <button data-sound="./assets/sounds/rain.mp3" data-video="./assets/video/rain.mp4" ><img src="./assets/svg/rain.svg" alt=""></button>
+        <button data-sound="./assets/sounds/beach.mp3" data-video="./assets/video/beach.mp4"><img src="./assets/svg/beach.svg" alt=""></button>
+      </div>
+    </div>
+      </div>
+      <!-- End of Meditation App -->
 
       <!-- TO-DO List APP -->
       <div id="content-6" class="content content--switch">
@@ -191,7 +222,7 @@
             </form>
           </div>
         </main>
-
+<!-- Large SVG Code -->
         <svg>
           <defs>
             <symbol id="checklist-icon" viewBox="-52 0 512 512">
@@ -244,8 +275,12 @@
             </symbol>
           </defs>
         </svg>
+        <!-- End of SVG -->
         <script src="./js/todo.js"></script>
       </div>
+      <!-- End of To-Do List App -->
+
+      <!-- Navigation Section with Grid Explore -->
       <nav class="grid">
         <div class="grid__item">
           <div class="grid__item-bg grid__item-bg--1"></div>
@@ -322,17 +357,22 @@
             <div class="grid__item-inner">
               <h3 class="grid__item-title">TO-DO List</h3>
               <span class="grid__item-desc"
-                >What do you want to get done today? Smart people. All in one
-                place.</span
+                >What do you want to get done today?</span
               >
             </div>
           </a>
         </div>
       </nav>
+      <!--End of Navigation Section with Grid Explore -->
     </main>
     <script src="js/demo.js"></script>
     <script src="js/anime.min.js"></script>
     <script src="js/menu.js"></script>
+    <script defer src="./js/meditation.js"></script>
+
+
+
+    <!-- FireBase Section -->
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <!-- <script src="/__/firebase/7.22.0/firebase-app.js"></script> -->
 
@@ -342,5 +382,7 @@
 
     <!-- Initialize Firebase -->
     <!-- <script src="/__/firebase/init.js"></script> -->
+    <!-- ENd of FireBase Section -->
+
   </body>
 </html>

@@ -34,7 +34,6 @@ function updateClock() {
   min.textContent = minutes;
   sec.textContent = seconds;
 
-  document.title = `${time}`;
   const progress = document.getElementById('js-progress');
   progress.value = timer[timer.mode] * 60 - timer.remainingTime.total;
 }
@@ -119,7 +118,7 @@ function handleMode(event) {
   stopTimer();
 }
 
-const buttonSound = new Audio('button-sound.mp3');
+const buttonSound = new Audio('./assets/sounds/button-sound.mp3');
 const mainButton = document.getElementById('js-btn');
 mainButton.addEventListener('click', () => {
   const { action } = mainButton.dataset;
