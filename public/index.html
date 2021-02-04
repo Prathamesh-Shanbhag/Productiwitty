@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="./css/basefor1.css" />
     <link rel="stylesheet" type="text/css" href="css/demo1.css" />
     <link rel="stylesheet" href="./cards.css" />
+    <link rel="stylesheet" href="./css/weather.css" />
 
     <script>
       document.documentElement.className = 'js';
@@ -65,75 +66,36 @@
       <div id="content-2" class="content content--switch">
         <h2 class="content__title">Bathroom</h2>
         <p class="content__text"></p>
-
-        <!-- Weather App -->
-        <style>
-          #content-3 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 400;
-            font-size: 1.3em;
-            color: #fff;
-            text-shadow: 0.1em 0.1em 0 rgba(0, 0, 0, 0.3);
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-image: linear-gradient(
-              to right top,
-              #99bbcb,
-              #a5c7d7,
-              #b1d4e2,
-              #bde0ee,
-              #c9edfa
-            );
-          }
-          h1 {
-            margin: 0 auto;
-            font-size: 2.2em;
-            text-align: center;
-            color: #fff;
-            font-size: 5em;
-          }
-          body.sunny {
-            background-image: linear-gradient(
-              to right top,
-              #ff4e50,
-              #ff713e,
-              #ff932b,
-              #ffb41d,
-              #f9d423
-            );
-          }
-          body.cloudy {
-            background-image: linear-gradient(
-              to right top,
-              #63747c,
-              #71858e,
-              #7f96a0,
-              #8da8b2,
-              #9bbac5
-            );
-          }
-          body.rainy {
-            background-image: linear-gradient(
-              to right top,
-              #637c7b,
-              #718e8c,
-              #7ea09e,
-              #8db2b0,
-              #9bc5c3
-            );
-          }
-        </style>
-        <div id="content-3" class="content content--switch">
-          <div id="weather">
-            <div id="description"></div>
-            <h1 id="temp"></h1>
-            <div id="location"></div>
-          </div>
-          <script src="./js/weather.js"></script>
-        </div>
       </div>
+
+      <!-- Weather App -->
+      <div id="content-3" class="content content--switch" style="padding: 0%">
+        <!-- <div class="view_main"> -->
+        <div class="app-wrap">
+          <header class="weather_header">
+            <input
+              type="text"
+              autocomplete="off"
+              class="search"
+              placeholder="Search for a city..."
+            />
+          </header>
+          <main class="weather_main">
+            <section class="location">
+              <div class="city">Northampton, GB</div>
+              <div class="date">Thursday 10 January 2020</div>
+            </section>
+            <div class="weather_current">
+              <div class="temp">15<span>°c</span></div>
+              <div class="weather">Sunny</div>
+              <div class="hi-low">13°c / 16°c</div>
+            </div>
+          </main>
+        </div>
+        <script src="./js/weather.js"></script>
+        <!-- </div> -->
+      </div>
+
       <!-- End of Weather App -->
       <!-- Pomodoro App -->
       <div id="content-4" class="content content--switch">
@@ -323,8 +285,10 @@
           <div class="grid__item-bg grid__item-bg--7"></div>
           <a href="#content-3" class="grid__link grid__item-content">
             <div class="grid__item-inner">
-              <h3 class="grid__item-title">Kitchen</h3>
-              <span class="grid__item-desc">Are you still Cooking?</span>
+              <h3 class="grid__item-title">Weather Check</h3>
+              <span class="grid__item-desc"
+                >Heading Out? Check for cloudy skies in advance.</span
+              >
             </div>
           </a>
         </div>

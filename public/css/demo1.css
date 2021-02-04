@@ -368,7 +368,7 @@ form {
   justify-content: space-between;
 }
 
-input[type='text'] {
+.js-todo-input {
   width: 100%;
   padding: 10px;
   border-radius: 4px;

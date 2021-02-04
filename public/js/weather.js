@@ -1,42 +1,74 @@
-function weatherBalloon(cityID) {
-  var key = '53a0e138f08a98a3b4b07c0df28856be';
-  fetch(
-    'https://api.openweathermap.org/data/2.5/weather?id=' +
-      cityID +
-      '&appid=' +
-      key
-  )
-    .then(function (resp) {
-      return resp.json();
-    }) // Convert data to json
-    .then(function (data) {
-      drawWeather(data);
-    })
-    .catch(function () {
-      // catch any errors
-    });
+const api = {
+  key: '53a0e138f08a98a3b4b07c0df28856be',
+  base: 'https://api.openweathermap.org/data/2.5/',
+};
+
+const searchbox = document.querySelector('.search');
+searchbox.addEventListener('keypress', setQuery);
+
+function setQuery(evt) {
+  if (evt.keyCode == 13) {
+    getResults(searchbox.value);
+  }
 }
 
-window.onload = function () {
-  weatherBalloon(1275339);
+function getResults(query) {
+  fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
+    .then((weather) => {
+      return weather.json();
+    })
+    .then(displayResults);
+}
 
-  // "lon": 72.847939,
-  // "lat": 19.01441
-};
-function drawWeather(d) {
-  var celcius = Math.round(parseFloat(d.main.temp) - 273.15);
-  var fahrenheit = Math.round((parseFloat(d.main.temp) - 273.15) * 1.8 + 32);
-  var description = d.weather[0].description;
+function displayResults(weather) {
+  let city = document.querySelector('.location .city');
+  city.innerText = `${weather.name}, ${weather.sys.country}`;
 
-  document.getElementById('description').innerHTML = description;
-  document.getElementById('temp').innerHTML = celcius + '&deg;';
-  document.getElementById('location').innerHTML = d.name;
+  let now = new Date();
+  let date = document.querySelector('.location .date');
+  date.innerText = dateBuilder(now);
 
-  if (description.indexOf('rain') > 0) {
-    document.body.className = 'rainy';
-  } else if (description.indexOf('cloud') > 0) {
-    document.body.className = 'cloudy';
-  } else if (description.indexOf('sunny') > 0) {
-    document.body.className = 'sunny';
-  }
+  let temp = document.querySelector('.weather_current .temp');
+  temp.innerHTML = `${Math.round(weather.main.temp)}<span>°c</span>`;
+
+  let weather_el = document.querySelector('.weather_current .weather');
+  weather_el.innerText = weather.weather[0].main;
+
+  let hilow = document.querySelector('.hi-low');
+  hilow.innerText = `${Math.round(weather.main.temp_min)}°c / ${Math.round(
+    weather.main.temp_max
+  )}°c`;
+}
+
+function dateBuilder(d) {
+  let months = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  ];
+  let days = [
+    'Sunday',
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday',
+  ];
+
+  let day = days[d.getDay()];
+  let date = d.getDate();
+  let month = months[d.getMonth()];
+  let year = d.getFullYear();
+
+  return `${day} ${date} ${month} ${year}`;
 }
