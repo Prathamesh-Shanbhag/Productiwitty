@@ -32,6 +32,9 @@
 .hidden_text {
   visibility: visible;
 }
+.hidden_buttons {
+  visibility: hidden;
+}
 @keyframes topToBottom {
   0% {
     opacity: 0;
@@ -108,6 +111,9 @@
   }
   .hidden_text {
     visibility: hidden;
+  }
+  .hidden_buttons {
+    visibility: visible;
   }
   .text_shift {
     visibility: visible;
