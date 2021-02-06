@@ -8,13 +8,15 @@
       href="https://fonts.googleapis.com/css?family=Montserrat:400,900"
       rel="stylesheet"
     />
-
-    <link rel="shortcut icon" href="favicon.ico" />
+<!-- All CSS Links -->
+    <link rel="shortcut icon" href="./assets/favicon/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="./css/basefor1.css" />
     <link rel="stylesheet" type="text/css" href="./css/main_styles.css" />
-    <link rel="stylesheet" href="./cards.css" />
     <link rel="stylesheet" href="./css/meditation.css">
     <link rel="stylesheet" href="./css/weather.css" />
+    <link rel="stylesheet" href="./css/verticalSliding.css">
+<!-- End of CSS links -->
+    
 <!-- CSS Variables Check Script -->
     <script>
       document.documentElement.className = 'js';
@@ -41,19 +43,21 @@
     <!-- End of CSS Variables Check Script -->
   </head>
   <!-- Hero Element/Landing PAge -->
+
   <body class="productiwitty_body">
     <main>
       <div class="message">
         To see the menu, please view on a larger screen.
       </div>
-      <div class="content content--fixed">
+      
+      <div class="content hide content--fixed">
         <header class="main-header">
-          <div class="main-links"></div>
-          <h1 class="main-header__title"><a href="index.html">Productiwitty.</a></h1>
+          <div class="main-links"><img class="prod_logo"src="./assets/logo.png.png" alt="" srcset=""></div>
+          <h1 class="main-header__title"><a href="#content-1">Productiwitty.</a></h1>
         </header>
         <nav class="demos">
           <a class="demo demo--current" href="index.html"> |</a>
-          <a class="demo" href="#login">Login.</a>
+          <a class="demo login_link" href="#login">Login.</a>
         </nav>
         <button class="menu-trigger">+ explore</button>
       </div>
@@ -61,19 +65,23 @@
         id="content-1"
         class="content content--switch content--switch-current"
       >
-        <h2 class="content__title">
-          Maximize Productivity<span class="dot_title">.</span>
-        </h2>
+        <h2 class="content__title">Maximize Producti<span class="hidden_text">vity</span>
+    <p class="slidingVertical">
+      <span class="ivi_text">vity</span>
+      <span class="text_shift">witty</span>
+    </p>
+    <span class="dot_title">.</span>
+  </h2>
       </div>
+      
   <!--End of Hero Element/Landing PAge -->
 
-  <!--  -->
+  <!-- Coming Soon Section -->
       <div id="content-2" class="content content--switch">
         <h2 class="content__title">Coming Soon</h2>
         <p class="content__text"></p>
       </div>
-<!--  -->
-
+<!--End of Coming Soon Section  -->
 
       <!--Start of Weather App -->
       <div id="content-3" class="content content--switch" style="padding: 0%">
@@ -157,8 +165,8 @@
       </div>
       <!-- End of Pomodoro App -->
 
-      <!-- Meditation App  -->
 
+      <!-- Meditation App  -->
       <div id="content-5" class="content content--switch" style="padding: 0%">
         <div class="app-meditation">
       <div class="vid-container">
@@ -166,10 +174,11 @@
           <source src="./assets/video/rain.mp4"  type="video/mp4">
         </video>
         </div>
+        <div class="controls_flex">
         <div class="time-select">
-          <button data-time="120">2 Minutes</button>
-          <button data-time="300" class="medium-mins">5 Minutes</button>
-          <button data-time="600" class="long-mins">10 Minutes</button>
+          <button data-time="120" class="time-mins">2 Mins</button>
+          <button data-time="300" class="time-mins">5 Mins</button>
+          <button data-time="600" class="time-mins">10 Mins</button>
         </div>
         <div class="player-container">
             <audio class="song">
@@ -190,6 +199,7 @@
         <button data-sound="./assets/sounds/rain.mp3" data-video="./assets/video/rain.mp4" ><img src="./assets/svg/rain.svg" alt=""></button>
         <button data-sound="./assets/sounds/beach.mp3" data-video="./assets/video/beach.mp4"><img src="./assets/svg/beach.svg" alt=""></button>
       </div>
+      </div>
     </div>
       </div>
       <!-- End of Meditation App -->
@@ -200,7 +210,6 @@
           <div class="container">
             <h1 class="app-title">todos</h1>
             <ul class="todo-list js-todo-list"></ul>
-            <!-- add the empty state here -->
             <div class="empty-state">
               <svg class="checklist-icon">
                 <use href="#checklist-icon"></use>
@@ -210,7 +219,6 @@
                 What do you want to get done today?
               </p>
             </div>
-            <!-- end -->
             <form class="js-form">
               <input
                 autofocus
@@ -222,7 +230,7 @@
             </form>
           </div>
         </main>
-<!-- Large SVG Code -->
+<!-- Large SVG Code(To-DO List Icon) Always Keep Collapsed -->
         <svg>
           <defs>
             <symbol id="checklist-icon" viewBox="-52 0 512 512">
@@ -367,6 +375,10 @@
       </nav>
       <!--End of Navigation Section with Grid Explore -->
     </main>
+    <footer class="footer">
+<h5>Productivity Website By- <span class="hidden_text">💻volatileCoding</span></h5>
+    </footer>
+    
     <script src="js/demo.js"></script>
     <script src="js/anime.min.js"></script>
     <script src="js/menu.js"></script>

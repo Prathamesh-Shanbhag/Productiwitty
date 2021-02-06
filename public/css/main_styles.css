@@ -11,6 +11,8 @@
 .dot_title {
   animation: colour 10s infinite alternate
     cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  position: absolute;
+  right: 5%;
 }
 @keyframes colour {
   0% {
@@ -48,8 +50,11 @@
   }
 }
 .content__title {
-  font-size: 2rem;
+  font-size: 4rem;
   margin: 0;
+}
+.hide {
+  background-color: lightcoral;
 }
 
 .content__location {
@@ -63,8 +68,11 @@
   text-align: center;
 }
 /* To_do List Background Color */
+#content-2 {
+  background-color: crimson;
+}
 #content-6 {
-  background-color: burlywood;
+  background-color: lightseagreen;
 }
 
 .menu-trigger {
@@ -78,6 +86,10 @@
 @media screen and (min-width: 55em) {
   .content__title {
     font-size: 8vw;
+    margin-right: 5rem;
+  }
+  .hide {
+    background-color: transparent;
   }
 
   .menu-trigger {
@@ -395,3 +407,9 @@ form {
   display: flex;
 }
 /* End of TO-DO List CSS */
+@media screen and (max-width: 55em) {
+  .productiwitty_body {
+    background-color: var(--color-bg);
+    z-index: 50;
+  }
+}

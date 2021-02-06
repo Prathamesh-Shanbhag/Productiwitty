@@ -1,3 +1,4 @@
+/* Global Tag Settings */
 audio,
 canvas,
 video {
@@ -74,6 +75,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+/* End of Global Tags */
 
 /* Fade effect */
 .js body {
@@ -195,7 +197,8 @@ main {
 }
 
 .main-header__title {
-  font-size: 1em;
+  height: auto;
+  font-size: 3rem;
   font-weight: bold;
   margin: 0;
   padding: 0.75em 0;
@@ -221,6 +224,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
 }
 
 .view_h {
@@ -238,10 +242,15 @@ main {
 
 .content--switch {
   padding: 2.5rem 1rem;
+  background-color: black;
 }
 
 .demo--current {
   opacity: 0.5;
+}
+.prod_logo {
+  width: 100px;
+  height: 100px;
 }
 
 @media screen and (min-width: 55em) {
@@ -257,9 +266,19 @@ main {
     grid-area: header;
     justify-self: start;
   }
+  .main-header__title {
+    font-size: 1em;
+    font-weight: bold;
+    margin: 0;
+    padding: 0.75em 0;
+  }
 
   .main-links {
     margin-right: 1rem;
+  }
+  .prod_logo {
+    width: 30px;
+    height: 30px;
   }
 
   .content {
@@ -313,4 +332,15 @@ main {
   .demo:nth-child(2) {
     margin: 0 3rem 0 1.5rem;
   }
+  .footer {
+    color: black;
+  }
+}
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  font-size: 1rem;
+  font-family: 'Josefin Sans', sans-serif;
 }

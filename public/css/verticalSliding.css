@@ -1,0 +1,123 @@
+/*Vertical Sliding*/
+.slidingVertical {
+  display: inline;
+}
+.slidingVertical span:nth-child(2) {
+  animation-delay: 2.7s;
+  -ms-animation-delay: 2.7s;
+  -webkit-animation-delay: 2.7s;
+}
+.ivi_text {
+  visibility: hidden;
+  animation: topToBottom 5s linear infinite;
+  -ms-animation: topToBottom 5s linear infinite;
+  -webkit-animation: topToBottom 5s linear infinite;
+  color: white;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  right: 15.5%;
+}
+.text_shift {
+  visibility: hidden;
+  animation: topToBottom 5s linear infinite;
+  -ms-animation: topToBottom 5s linear infinite;
+  -webkit-animation: topToBottom 5s linear infinite;
+  color: #f8d05d;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  right: 14.5%;
+}
+.hidden_text {
+  visibility: visible;
+}
+@keyframes topToBottom {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 0;
+    -webkit-transform: translateY(-50px);
+  }
+  10% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+  }
+  25% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+  }
+  51% {
+    opacity: 0;
+    -webkit-transform: translateY(50px);
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes topToBottom {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 0;
+    -webkit-transform: translateY(-50px);
+  }
+  10% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+  }
+  25% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+  }
+  51% {
+    opacity: 0;
+    -webkit-transform: translateY(50px);
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@media screen and (min-width: 55em) {
+  .ivi_text {
+    visibility: visible;
+    animation: topToBottom 5s linear infinite;
+    -ms-animation: topToBottom 5s linear infinite;
+    -webkit-animation: topToBottom 5s linear infinite;
+    color: white;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    right: 9.8%;
+  }
+  .hidden_text {
+    visibility: hidden;
+  }
+  .text_shift {
+    visibility: visible;
+    animation: topToBottom 5s linear infinite;
+    -ms-animation: topToBottom 5s linear infinite;
+    -webkit-animation: topToBottom 5s linear infinite;
+    color: #f8d05d;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    right: 5.5%;
+  }
+}
