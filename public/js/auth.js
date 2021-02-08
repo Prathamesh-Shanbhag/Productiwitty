@@ -6,7 +6,6 @@ const whenSignedOut = document.getElementById('whenSignedOut');
 
 const signInBtn = document.getElementById('signInBtn');
 const signOutBtn = document.getElementById('signOutBtn');
-const loginUpdate = document.getElementById('loginUpdate');
 const userDetails = document.getElementById('userDetails');
 // Created new instance
 const provider = new firebase.auth.GoogleAuthProvider();
@@ -24,19 +23,17 @@ auth.onAuthStateChanged((user) => {
     whenSignedOut.hidden = true;
     redirect_Page();
     userDetails.innerHTML = `<h3>Hello ${user.displayName}!</h3> <p>User ID: ${user.uid}</p> <a href="./index.html"><button class="login__SignInBtn">Take me back to homepage</button></a>`;
-    loginUpdate.innerHTML = `<h3 style="color: #f8d05d;">Hello ${user.displayName}!</h3>|<a href="./loginPage"><button style="color: #f8d05d">Logout.</button></a>`;
   } else {
     // not signed in
     whenSignedIn.hidden = true;
     whenSignedOut.hidden = false;
     userDetails.innerHTML = '';
-    loginUpdate.innerHTML = 'Login';
   }
 });
 
 function redirect_Page() {
   var tID = setTimeout(function () {
-    window.location.href = './index.html';
+    window.location.href = 'https://productiwitty.vercel.app/';
     window.clearTimeout(tID); // clear time out.
   }, 20000);
 }
