@@ -49,12 +49,49 @@
     color: #f8d05d;
   }
 }
+@keyframes bgcolour {
+  0% {
+    background-color: #111;
+  }
+  10% {
+    background-color: rgb(15, 53, 16);
+  }
+  20% {
+    background-color: #da3b35;
+  }
+  30% {
+    background-color: #f102d2;
+  }
+  40% {
+    background-color: #4600f2;
+  }
+  50% {
+    background-color: rgb(185, 156, 67);
+  }
+  60% {
+    background-color: #4caf50;
+  }
+  70% {
+    background-color: #d43e48;
+  }
+  80% {
+    background-color: #da3b35;
+  }
+  90% {
+    background-color: #4600f1;
+  }
+  100% {
+    background-color: #b61924;
+  }
+}
+
 .content__title {
   font-size: 4rem;
   margin: 0;
 }
 .hide {
-  background-color: lightcoral;
+  animation: bgcolour 60s infinite alternate
+    cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 
 .content__location {
@@ -90,6 +127,7 @@
   }
   .hide {
     background-color: transparent;
+    animation: none;
   }
 
   .menu-trigger {
